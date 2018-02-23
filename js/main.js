@@ -6,15 +6,24 @@ var globalAskVariable = "";
 //     globalAskVariable = promptAsk;
 // }
 
+var typeFeaturesList = 
+[
+    {type: "rectangle"},
+    {type: "straight line"},
+    {type: "inclined line"},
+
+];
+
 function askTypeFeatures ()
 {
-    var promptAsk = prompt ("rect or line");
+    var promptAsk = prompt ("nl or sl or r");
     globalAskVariable = promptAsk;
 }
 
 function firstMethod () {
     if (globalAskVariable == "nl")
     {
+        alert (String(typeFeaturesList[2].type));
         var canvas = document.getElementById ("canvasId");
         var ctx = canvas.getContext("2d");
         ctx.moveTo (50, 70);
@@ -23,10 +32,12 @@ function firstMethod () {
     }
     if (globalAskVariable == "sl")
     {
+        alert (String(typeFeaturesList[1].type));
         secondMethod ();
     }
     if (globalAskVariable == "r")
     {
+        alert (String(typeFeaturesList[0].type));
         drawRectangle ();
     }
 }
