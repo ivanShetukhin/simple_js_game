@@ -307,7 +307,7 @@ function createHome (sclx, scly, trsx, trsy) {
   // ctx.stroke ();
   //create door rectangle
   ctx.beginPath ();
-  ctx.rect (280, 150, 70, 161);
+  ctx.rect (280, 150, 70, 160);
   ctx.closePath ();
   // ctx.scale (scaleValueX, scaleValueY);
   ctx.fillStyle = "yellow";
@@ -324,6 +324,10 @@ function createHome (sclx, scly, trsx, trsy) {
   ctx.fill();
   // ctx.stroke ();
   ctx.restore ();
+}
+//create unend animation
+function unendAnimation () {
+  //
 }
 //------------------------------------------------------------
 //ths input point
