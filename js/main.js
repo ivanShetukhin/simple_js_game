@@ -289,12 +289,33 @@ function createHome () {
   ctx.lineTo(250, 10); // draw down toward left
   ctx.closePath(); // connect end to start
   ctx.fillStyle = "blue";
-  ctx.strokeStyle = "blue";
+  // ctx.strokeStyle = "blue";
   ctx.fill();
-  ctx.stroke(); // outline the shape that's been described
-  //create rectangle
-  
-  //
+  // ctx.stroke(); // outline the shape that's been described
+  //create house rectangle
+  ctx.beginPath ();
+  ctx.rect (110, 110, 280, 200);
+  ctx.closePath ();
+  // ctx.strokeStyle ="orange";
+  ctx.fillStyle = "orange";
+  ctx.fill ();
+  // ctx.stroke ();
+  //create door rectangle
+  ctx.beginPath ();
+  ctx.rect (280, 150, 70, 161);
+  ctx.closePath ();
+  ctx.fillStyle = "yellow";
+  // ctx.strokeStyle ="yellow";
+  ctx.fill();
+  // ctx.stroke ();
+  //create window
+  ctx.beginPath ();
+  ctx.rect (150, 150, 80, 70);
+  ctx.closePath ();
+  ctx.fillStyle = "blue";
+  // ctx.strokeStyle ="blue";
+  ctx.fill();
+  // ctx.stroke ();
 }
 //------------------------------------------------------------
 //ths input point
