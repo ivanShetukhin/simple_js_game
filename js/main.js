@@ -12,16 +12,26 @@ var typeFeaturesList =
     {type: "straight line"},
     {type: "inclined line"},
     {type: "broken line"},
+    {type: "image"},
+];
+
+var typeAnswers = [
+    {answers: 'nl'},
+    {answers: 'sl'},
+    {answers: 'r'},
+    {answers: 'b'},
+    {answers: 'm'},
+    {answers: 'i'},
 ];
 
 var sizeTextLine = 
 [
     {size_one: 10},
-]
+];
 
 function askTypeFeatures ()
 {
-    var promptAsk = prompt ("nl or sl or r or b or m");
+    var promptAsk = prompt ("nl or sl or r or b or m or i");
     globalAskVariable = promptAsk;
 }
 
@@ -53,6 +63,14 @@ function firstMethod () {
             drawManyRectangle (20, 30, 'brawn');
             drawManyRectangle (30, 60, 'blue');
             drawManyRectangle (40, 90, 'red');
+        }
+        catch (e) {
+            console.log (e);
+        }
+    }
+    if (globalAskVariable == String(typeAnswers[5].answers)) {
+        try {
+            createSimpleAnimations ();
         }
         catch (e) {
             console.log (e);
@@ -105,24 +123,35 @@ function drawManyRectangle (side, x, color) {
     ctx.strokeRect (x, 10, side, side);
     ctx.stroke ();
 }
+
 //----------------------------------------------------------
 //----------------------------------------------------------
 //draw rectangle by canvas
 function drawRectangle () {
+    var objectSize = {a: 10, b: 30, c: 80, d: 40};
     var canvas  = document.getElementById ("canvasId");
     var ctx = canvas.getContext ("2d");
     canvas.width = 200;
     canvas.height = 100;
-    ctx.strokeText (String(typeFeaturesList[0].type), 10, 10);
+    ctx.strokeText (String(typeFeaturesList[0].type), objectSize.a, objectSize.a);
     ctx.strokeStyle = "green";
     ctx.fillStyle = "blue";
-    ctx.shadowBlur = 10;
+    ctx.shadowBlur = objectSize.a;
     ctx.shadowColor = "brown";
-    ctx.rect (10, 30, 80, 40);
+    ctx.rect (objectSize);
     ctx.fill ();
     ctx.stroke ();
 }
 
+//create a simple animation
+function createSimpleAnimations () {
+    var ctx = getCanvasMethod ();
+    var imageSource = new Image ();
+    imageSource.onload = function () {
+        ctx.drawImage(imageSource, 10,10, 80, 80);
+    }
+    imageSource.src = "assets/carrot1.png";
+}
 //------------------------------------------------------------
 //ths input point
 function main () 
