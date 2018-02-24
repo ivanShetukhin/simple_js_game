@@ -44,6 +44,9 @@ var typeAnswers = [{
   {
     answers: 'a'
   },
+  {
+    answers: 't'
+  }
 ];
 
 var sizeTextLine = [{
@@ -56,15 +59,16 @@ function getSimpleCanvas (){
   return canvas;
 }
 function askTypeFeatures() {
-  var promptAsk = prompt("nl or sl or r or b or m or i or a");
+  var promptAsk = prompt ("nl or sl or r or b or m or i or a or t");
   globalAskVariable = promptAsk;
 }
 
 function firstMethod() {
+  var gsk = globalAskVariable.toLowerCase();
   if (globalAskVariable == "nl") {
-    var canvas = document.getElementById("canvasId");
-    var ctx = canvas.getContext("2d");
-    ctx.strokeText(String(typeFeaturesList[2].type), 10, 10);
+    var canvas = document.getElementById ("canvasId");
+    var ctx = canvas.getContext ("2d");
+    ctx.strokeText(String (typeFeaturesList[2].type), 10, 10);
     ctx.moveTo(50, 70);
     ctx.lineTo(100, 50);
     ctx.stroke();
@@ -87,19 +91,28 @@ function firstMethod() {
       console.log(e.name);
     }
   }
-  if (globalAskVariable == String(typeAnswers[5].answers)) {
+  if (globalAskVariable == String (typeAnswers [5].answers)) {
     try {
-      createSimpleAnimations();
+      createSimpleAnimations ();
     } catch (e) {
       console.log(e.name);
     }
   }
-  if (globalAskVariable == String (typeAnswers[6].answers)) {
+  if (globalAskVariable == String (typeAnswers [6].answers)) {
     try {
       createSimpleAnimationByInterval ();
     }
     catch (e) {
       console.log (e.stack);
+    }
+  }
+  //for debugging gsk == t
+  if (gsk == typeAnswers[7].answers) {
+    try {
+      drawImageNewFunction();
+    }
+    catch (e) {
+      console.log ("error translate" + e.stack);
     }
   }
 }
@@ -185,7 +198,7 @@ function createSimpleAnimations() {
 function createSimpleAnimationByInterval() {
   var ctx = getCanvasMethod();                    //get ctx
   var canvas = getSimpleCanvas();
-  var imageSource = new Image ();
+  var imageSource = new Image();
   imageSource.onload = function () {
     setInterval (move, 100);
     console.log (move());
@@ -204,11 +217,91 @@ function createSimpleAnimationByInterval() {
     return x;
   }
 }
+//transorm some objects
+// function transormSomeObjects() {
+//   var canvas = document.getElementById ('canvasId');
+//   var ctx = canvas.getContext ('2d');
+//   imageSource = new Image();
+//
+//   imageSource.onload = goLoadFunction ();
+//   function goLoadFunction() {
+//     try {
+//       ctx.save ();
+//       ctx.translate (40, -10);
+//       ctx.rotate (30 * Math.PI / 180);
+//       ctx.scale (0.3, 0.3);
+//       ctx.drawImage (imageSource, 0, 0);
+//       ctx.restore ();
+//     }
+//     catch (e) {
+//       console.log (e.stack);
+//     }
+//     // try {
+//     //   ctx.save ();
+//     //   ctx.rotate (-30 * Math.PI / 180);
+//     //   ctx.translate (100, 100);
+//     //   ctx.scale (0.4, 0.4);
+//     //   ctx.drawImage (imageSource, 0, 0);
+//     //   ctx.restore ();
+//     // }
+//     // catch (e) {
+//     //   console.log (e.stack);
+//     // }
+//   };
+//   imageSource  = "assets/carrot1.png";
+//   console.log (getAllMethods(imageSource));
+// };
+
+function drawImageNewFunction () {
+  var canvas = document.getElementById ("canvasId");
+  var ctx = canvas.getContext ("2d");
+  var image = new Image ();
+  image.onload = function () {
+    ctx.save ();
+    ctx.rotate (-30 * Math.PI / 180);
+    ctx.scale (0.4, 0.4);
+    ctx.drawImage (image, 0, 0, 50, 50);
+    ctx.restore ();
+    ctx.save ();
+    ctx.rotate (30 * Math.PI / 180);
+    ctx.scale (0.5, 0.5);
+    ctx.drawImage (image, 0, 0, 50, 50);
+    ctx.restore ();
+  }
+  image.src = 'assets/carrot1.png';
+}
+//------------------------------------------------------------
+//show all methods of objects
+function getAllMethods(obj)
+{
+    return Object.getOwnPropertyNames(obj).filter(function(prop) {
+            return typeof obj[prop] == 'function';
+        });
+};
+//create a home with window, roof and door
+function createHome () {
+  var canvas = document.getElementById ("canvasId");
+  var ctx = canvas.getContext ("2d");
+  //create roof
+  ctx.beginPath();
+  ctx.moveTo(100, 110); // pick up "pen," reposition
+  ctx.lineTo(400, 110); // draw straight across to right
+  ctx.lineTo(250, 10); // draw down toward left
+  ctx.closePath(); // connect end to start
+  ctx.fillStyle = "blue";
+  ctx.strokeStyle = "blue";
+  ctx.fill();
+  ctx.stroke(); // outline the shape that's been described
+  //create rectangle
+  
+  //
+}
 //------------------------------------------------------------
 //ths input point
 function main() {
-  askTypeFeatures();
-  firstMethod();
+  // askTypeFeatures();
+  // firstMethod();
+  createHome ();
 }
 
 main();
