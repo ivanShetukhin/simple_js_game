@@ -279,15 +279,19 @@ function getAllMethods(obj)
         });
 };
 //create a home with window, roof and door
-function createHome () {
+function createHome (sclx, scly, trsx, trsy) {
   var canvas = document.getElementById ("canvasId");
   var ctx = canvas.getContext ("2d");
+  ctx.save ();
+  ctx.scale (sclx, scly);
+  ctx.translate (trsx, trsy);
   //create roof
   ctx.beginPath();
   ctx.moveTo(100, 110); // pick up "pen," reposition
   ctx.lineTo(400, 110); // draw straight across to right
   ctx.lineTo(250, 10); // draw down toward left
   ctx.closePath(); // connect end to start
+  // ctx.scale (scaleValueX, scaleValueY);
   ctx.fillStyle = "blue";
   // ctx.strokeStyle = "blue";
   ctx.fill();
@@ -296,6 +300,7 @@ function createHome () {
   ctx.beginPath ();
   ctx.rect (110, 110, 280, 200);
   ctx.closePath ();
+  // ctx.scale (scaleValueX, scaleValueY);
   // ctx.strokeStyle ="orange";
   ctx.fillStyle = "orange";
   ctx.fill ();
@@ -304,6 +309,7 @@ function createHome () {
   ctx.beginPath ();
   ctx.rect (280, 150, 70, 161);
   ctx.closePath ();
+  // ctx.scale (scaleValueX, scaleValueY);
   ctx.fillStyle = "yellow";
   // ctx.strokeStyle ="yellow";
   ctx.fill();
@@ -312,17 +318,22 @@ function createHome () {
   ctx.beginPath ();
   ctx.rect (150, 150, 80, 70);
   ctx.closePath ();
+
   ctx.fillStyle = "blue";
   // ctx.strokeStyle ="blue";
   ctx.fill();
   // ctx.stroke ();
+  ctx.restore ();
 }
 //------------------------------------------------------------
 //ths input point
 function main() {
   // askTypeFeatures();
   // firstMethod();
-  createHome ();
+  // createHome (1, 1);
+  createHome (1, 1, 10, 130);
+  createHome (0.5, 0.5, -40, 0);
+  createHome (2, 2, 100, 0);
 }
 
 main();

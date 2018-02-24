@@ -1,8 +1,5 @@
-.canvasId {
-    width: 1000;
-    height: 1000;
-}
-
 body {
-    background-color: #ffffff;
+  width: 3000px;
+  height: 2800px;
+  background-color: #ffffff;
 }
