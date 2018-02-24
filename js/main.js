@@ -6,7 +6,7 @@ var globalAskVariable = "";
 //     globalAskVariable = promptAsk;
 // }
 
-var typeFeaturesList = 
+var typeFeaturesList =
 [
     {type: "rectangle"},
     {type: "straight line"},
@@ -24,7 +24,7 @@ var typeAnswers = [
     {answers: 'i'},
 ];
 
-var sizeTextLine = 
+var sizeTextLine =
 [
     {size_one: 10},
 ];
@@ -65,7 +65,7 @@ function firstMethod () {
             drawManyRectangle (40, 90, 'red');
         }
         catch (e) {
-            console.log (e);
+            console.log (e.name);
         }
     }
     if (globalAskVariable == String(typeAnswers[5].answers)) {
@@ -73,7 +73,7 @@ function firstMethod () {
             createSimpleAnimations ();
         }
         catch (e) {
-            console.log (e);
+            console.log (e.name);
         }
     }
 }
@@ -152,9 +152,11 @@ function createSimpleAnimations () {
     }
     imageSource.src = "assets/carrot1.png";
 }
+//create simple animation by intervar
+
 //------------------------------------------------------------
 //ths input point
-function main () 
+function main ()
 {
     askTypeFeatures ();
     firstMethod ();
