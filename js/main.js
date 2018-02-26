@@ -327,17 +327,56 @@ function createHome (sclx, scly, trsx, trsy) {
 }
 //create unend animation
 function unendAnimation () {
-  //
+  var canvas = getSimpleCanvas();
+  var ctx = getCanvasMethod();
+  var image = new Image ();
+  var x = 10;
+  var y = 10;
+  function move () {
+    var message  = "here";
+      if (x < 200) {
+        if (y ==10 ) {
+          x += 10;
+          y = 10;
+        }
+      }
+      if (x == 200)
+      {
+        if (y < 200) {
+          x = 200;
+          y += 10;
+        }
+      }
+      if (y == 200) {
+        if (x > 10) {
+          console.log (message);
+          x -= 10;
+        }
+      }
+      if (x == 10) {
+        console.log (x, y);
+        if (x < 200 )
+        {
+          y -= 10;
+        }
+      }
+    ctx.clearRect (0, 0, canvas.width, canvas.height);
+    ctx.drawImage (image, x, y, 80, 80);
+  }
+  image.onload = function () {
+    setInterval (move, 100);
+  }
+  image.src = "assets/carrot1.png";
 }
 //------------------------------------------------------------
 //ths input point
 function main() {
   // askTypeFeatures();
   // firstMethod();
-  // createHome (1, 1);
-  createHome (1, 1, 10, 130);
-  createHome (0.5, 0.5, -40, 0);
-  createHome (2, 2, 100, 0);
+  // createHome (1, 1, 10, 130);
+  // createHome (0.5, 0.5, -40, 0);
+  // createHome (2, 2, 100, 0);
+  unendAnimation();
 }
 
 main();
