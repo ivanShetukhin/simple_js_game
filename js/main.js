@@ -334,32 +334,32 @@ function unendAnimation () {
   var y = 10;
   function move () {
     var message  = "here";
-      if (x < 200) {
-        if (y ==10 ) {
-          x += 10;
-          y = 10;
-        }
+    if (x < 200) {
+      if (y ==10 ) {
+        x += 10;
+        y = 10;
       }
-      if (x == 200)
+    }
+    if (x == 200)
+    {
+      if (y < 200) {
+        x = 200;
+        y += 10;
+      }
+    }
+    if (y == 200) {
+      if (x > 10) {
+        console.log (message);
+        x -= 10;
+      }
+    }
+    if (x == 10) {
+      console.log (x, y);
+      if (x < 200 )
       {
-        if (y < 200) {
-          x = 200;
-          y += 10;
-        }
+        y -= 10;
       }
-      if (y == 200) {
-        if (x > 10) {
-          console.log (message);
-          x -= 10;
-        }
-      }
-      if (x == 10) {
-        console.log (x, y);
-        if (x < 200 )
-        {
-          y -= 10;
-        }
-      }
+    }
     ctx.clearRect (0, 0, canvas.width, canvas.height);
     ctx.drawImage (image, x, y, 80, 80);
   }
