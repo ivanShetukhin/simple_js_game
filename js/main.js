@@ -412,6 +412,53 @@ function happyMethod () {
   }
   writeMethod(msg.b);
 }
+//battleship game
+function battleshipPlay () {
+  var lct1 = 3;
+  var lct2 = 4;
+  var lct3 = 5;
+  var sunk = false;
+  var gses;
+  var hit = 0;
+  var gs = 0;
+  var maxd = 6;
+
+  while (sunk == false) {
+    gs = prompt ("input fire");
+    if (gs < 0 || gs > maxd) {
+      alert ("your number is wrong!");
+    }
+    else {
+      gses = gses + 1;
+      if (gs == lct1) {
+        hit = hit + 1;
+      }
+      else if (gs == lct2) {
+        hit = hit + 1;
+      }
+      else if (gs == lct3) {
+        hit = hit + 1;
+      }
+
+
+
+
+
+      
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
@@ -428,6 +475,9 @@ function main() {
   }
   if (choiceProgramm == 3) {
     happyMethod();
+  }
+  if (choiceProgramm == 4) {
+    battleshipPlay ();
   }
   // askTypeFeatures();
   // firstMethod();
