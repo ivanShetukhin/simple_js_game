@@ -418,7 +418,7 @@ function battleshipPlay () {
   var lct2 = 4;
   var lct3 = 5;
   var sunk = false;
-  var gses;
+  var gses =  0;
   var hit = 0;
   var gs = 0;
   var maxd = 6;
@@ -430,34 +430,38 @@ function battleshipPlay () {
     }
     else {
       gses = gses + 1;
+      console.log (gses);
       if (gs == lct1) {
+        alert ("hit");
         hit = hit + 1;
+        if (hit == 3) {
+          sunk = true;
+          alert ("is sunk");
+        }
       }
       else if (gs == lct2) {
+        alert ("hit");
         hit = hit + 1;
+        if (hit == 3) {
+          sunk = true;
+          alert ("is sunk");
+        }
       }
       else if (gs == lct3) {
+        alert ("hit");
         hit = hit + 1;
+        if (hit == 3) {
+          sunk = true;
+          alert ("is sunk");
+        }
+      }
+      else {
+        alert ("miss");
       }
 
-
-
-
-
-      
     }
   }
-
-
-
-
-
-
-
-
-
-
-
+  alert ("you kill ship from " + gses + " accuracy");
 }
 
 
@@ -465,7 +469,7 @@ function battleshipPlay () {
 //------------------------------------------------------------
 //ths input point
 function main() {
-  var choiceProgramm = 3;
+  var choiceProgramm = 4;
 
   if (choiceProgramm == 1) {
       unendAnimation();
