@@ -368,15 +368,73 @@ function unendAnimation () {
   }
   image.src = "assets/carrot1.png";
 }
+//work with tiled map
+function tiledMapMethod () {
+  // var mapManager = {
+  //   mapData: null,
+  //   tLayer: null;
+  //   xCount: 0,
+  //   yCount: 0,
+  //   tSize: {x: 32, y: 32};
+  //   mapSize: {x: 50, y: 50};
+  //   tilesets: new Array ();
+  // };
+}
+//set timeout for message
+function setTimeMethod () {
+  setTimeout (wakeUpMessage, 100000);
+}
+
+function wakeUpMessage () {
+  document.write ("wake up!");
+}
+
+function writeMethod (msg) {
+  try {
+    // var msgid = document.getElementById ("messageId");
+    // messageId.innerHTML = msg;
+    document.write (msg);
+  }
+  catch (e) {
+    console.log (e.stack);
+  }
+}
+
+function happyMethod () {
+  var i = 0;
+  var msg = {
+    a: "happy birthday to you! <br>",
+    b: "happy birthday dear John"
+  }
+  while (i < 2) {
+    writeMethod(msg.a);
+    i = i + 1;
+  }
+  writeMethod(msg.b);
+}
+
+
+
 //------------------------------------------------------------
 //ths input point
 function main() {
+  var choiceProgramm = 3;
+
+  if (choiceProgramm == 1) {
+      unendAnimation();
+  }
+  if (choiceProgramm == 2) {
+    setTimeMethod ();
+  }
+  if (choiceProgramm == 3) {
+    happyMethod();
+  }
   // askTypeFeatures();
   // firstMethod();
   // createHome (1, 1, 10, 130);
   // createHome (0.5, 0.5, -40, 0);
   // createHome (2, 2, 100, 0);
-  unendAnimation();
+
 }
 
 main();
