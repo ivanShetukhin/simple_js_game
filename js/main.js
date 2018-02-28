@@ -414,9 +414,9 @@ function happyMethod () {
 }
 //battleship game
 function battleshipPlay () {
-  var lct1 = 3;
-  var lct2 = 4;
-  var lct3 = 5;
+  var lct1 = Math.floor(Math.random() * 5);
+  var lct2 = lct1 + 1;
+  var lct3 = lct2 + 1;
   var sunk = false;
   var gses =  0;
   var hit = 0;
@@ -462,6 +462,10 @@ function battleshipPlay () {
     }
   }
   alert ("you kill ship from " + gses + " accuracy");
+}
+//
+function fandomNumericMethod () {
+
 }
 
 
