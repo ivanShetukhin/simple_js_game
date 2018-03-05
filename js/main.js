@@ -523,27 +523,30 @@ function detectNormal (car) {
 function main() {
   var choiceProgramm = 7;
 
-  if (choiceProgramm == 1) {
+  switch (choiceProgramm) {
+    case 1:
       unendAnimation();
+      break;
+    case 2:
+      setTimeMethod ();
+      break;
+    case 3:
+      happyMethod();
+      break;
+    case 4:
+      battleshipPlay ();
+      break;
+    case 5:
+      learnArraysMethod ();
+      break;
+    case 6:
+      makeObjectMethod ();
+      break;
+    case 7:
+      detectCarOld();
+      break;
   }
-  else if (choiceProgramm == 2) {
-    setTimeMethod ();
-  }
-  else if (choiceProgramm == 3) {
-    happyMethod();
-  }
-  else if (choiceProgramm == 4) {
-    battleshipPlay ();
-  }
-  else if (choiceProgramm == 5) {
-    learnArraysMethod ();
-  }
-  else if (choiceProgramm == 6) {
-    makeObjectMethod ();
-  }
-  else if (choiceProgramm == 7) {
-    detectCarOld();
-  }
+
   // askTypeFeatures();
   // firstMethod();
   // createHome (1, 1, 10, 130);
