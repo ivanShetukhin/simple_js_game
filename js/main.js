@@ -540,7 +540,6 @@ var car = {
   }
 };
 
-
 function driveAuto () {
   var car1 =  car;
   car1.start ();
