@@ -489,28 +489,60 @@ function makeObjectMethod () {
   delete fobj.owner;
   document.write ("<br>" + fobj.owner);
 }
+
+function detectCarOld () {
+  var car1 = {
+    name: "ford",
+    mileage: 1232,
+    color: "yellow",
+    passengers: 4
+  };
+  var lookCar = detectNormal(car1);
+
+  if (lookCar) {
+    document.write ("good mobile ");
+  }
+  else {
+    document.write ("bad mobile");
+  }
+}
+
+function detectNormal (car) {
+  if (car.mileage > 10000) {
+    document.write ("bad mobile because milleage very large");
+    return false;
+  }
+  else if (car.passengers < 4) {
+    document.write ("small mobile <br>");
+    return false;
+  }
+  return true;
+}
 //------------------------------------------------------------
 //ths input point
 function main() {
-  var choiceProgramm = 6;
+  var choiceProgramm = 7;
 
   if (choiceProgramm == 1) {
       unendAnimation();
   }
-  if (choiceProgramm == 2) {
+  else if (choiceProgramm == 2) {
     setTimeMethod ();
   }
-  if (choiceProgramm == 3) {
+  else if (choiceProgramm == 3) {
     happyMethod();
   }
-  if (choiceProgramm == 4) {
+  else if (choiceProgramm == 4) {
     battleshipPlay ();
   }
-  if (choiceProgramm == 5) {
+  else if (choiceProgramm == 5) {
     learnArraysMethod ();
   }
-  if (choiceProgramm == 6) {
+  else if (choiceProgramm == 6) {
     makeObjectMethod ();
+  }
+  else if (choiceProgramm == 7) {
+    detectCarOld();
   }
   // askTypeFeatures();
   // firstMethod();
