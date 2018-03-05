@@ -464,16 +464,29 @@ function battleshipPlay () {
   alert ("you kill ship from " + gses + " accuracy");
 }
 //
-function fandomNumericMethod () {
+function learnArraysMethod () {
+  var arv = [1, 2, 3, 4, 5, 6, 7];
+  for (var i = 0; i < arv.length; i ++) {
+    document.write (arv[i] + "<br>");
+  }
+};
 
+function makeObjectMethod () {
+  var fobj = {
+    name: "ford",
+    size: 12,
+    color: "black"
+  };
+
+
+
+
+  
 }
-
-
-
 //------------------------------------------------------------
 //ths input point
 function main() {
-  var choiceProgramm = 4;
+  var choiceProgramm = 5;
 
   if (choiceProgramm == 1) {
       unendAnimation();
@@ -486,6 +499,9 @@ function main() {
   }
   if (choiceProgramm == 4) {
     battleshipPlay ();
+  }
+  if (choiceProgramm == 5) {
+    learnArraysMethod ();
   }
   // askTypeFeatures();
   // firstMethod();
