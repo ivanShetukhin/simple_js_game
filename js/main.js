@@ -518,10 +518,39 @@ function detectNormal (car) {
   }
   return true;
 }
+//
+var car = {
+  name: "fiat",
+  passengers: 4,
+  color: "yellow",
+  st_engine: false,
+  start: function () {
+    this.st_engine = true;
+  },
+  stop: function () {
+    this.st_engine = false;
+  },
+  drive: function () {
+    if (this.st_engine) {
+      document.write ("brrrrr");
+    }
+    else if (!this.st_engine) {
+      document.write ("zzzzz");
+    }
+  }
+};
+
+
+function driveAuto () {
+  var car1 =  car;
+  car1.start ();
+  car1.drive ();
+}
+
 //------------------------------------------------------------
 //ths input point
 function main() {
-  var choiceProgramm = 7;
+  var choiceProgramm = 8;
 
   switch (choiceProgramm) {
     case 1:
@@ -545,6 +574,8 @@ function main() {
     case 7:
       detectCarOld();
       break;
+    case 8:
+      driveAuto();
   }
   // askTypeFeatures();
   // firstMethod();
