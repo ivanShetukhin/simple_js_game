@@ -546,13 +546,11 @@ function main() {
       detectCarOld();
       break;
   }
-
   // askTypeFeatures();
   // firstMethod();
   // createHome (1, 1, 10, 130);
   // createHome (0.5, 0.5, -40, 0);
   // createHome (2, 2, 100, 0);
-
 }
 
 main();
