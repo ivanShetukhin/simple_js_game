@@ -472,21 +472,27 @@ function learnArraysMethod () {
 };
 
 function makeObjectMethod () {
+  var svs = "black";
+
   var fobj = {
     name: "ford",
     size: 12,
     color: "black"
   };
 
+  fobj.owner = "sly Jonny";
 
-
-
-  
+  if (svs == fobj.color) {
+    document.write (fobj.name + " your choice" + "<br>");
+    document.write (fobj.owner);
+  }
+  delete fobj.owner;
+  document.write ("<br>" + fobj.owner);
 }
 //------------------------------------------------------------
 //ths input point
 function main() {
-  var choiceProgramm = 5;
+  var choiceProgramm = 6;
 
   if (choiceProgramm == 1) {
       unendAnimation();
@@ -502,6 +508,9 @@ function main() {
   }
   if (choiceProgramm == 5) {
     learnArraysMethod ();
+  }
+  if (choiceProgramm == 6) {
+    makeObjectMethod ();
   }
   // askTypeFeatures();
   // firstMethod();
