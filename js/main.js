@@ -540,6 +540,48 @@ var car = {
   }
 };
 
+//second object
+var fiat = {
+  make: "fiat",
+  color: "blue",
+  fuel: 0,
+  started: false,
+  start_engine: function () {
+    this.started = true;
+  },
+  stop_engine: function () {
+    this.started = false;
+  },
+  drive: function () {
+    if (this.started) {
+      document.write ("bbbbbbbbb");
+    }
+    else if (!this.started) {
+      document.write ("zzzzzzzzz");
+    }
+  },
+  addFuel: function (amount) {
+    if (!this.started) {
+      this.fuel = this.fuel + amount;
+    }
+    else if (this.started) {
+      document.write ("turn off the engine");
+    }
+  }
+};
+
+function driveFiat () {
+  console.log(fiat);
+  var fiat_car = fiat;
+  var amount  = 200;
+  fiat_car.start_engine();
+  fiat_car.drive();
+  fiat_car.stop_engine();
+  fiat_car.addFuel (amount);
+  fiat_car.start_engine();
+  fiat_car.drive();
+}
+
 function driveAuto () {
   var car1 =  car;
   car1.start ();
@@ -549,7 +591,7 @@ function driveAuto () {
 //------------------------------------------------------------
 //ths input point
 function main() {
-  var choiceProgramm = 8;
+  var choiceProgramm = 9;
 
   switch (choiceProgramm) {
     case 1:
@@ -575,6 +617,10 @@ function main() {
       break;
     case 8:
       driveAuto();
+      break;
+    case 9:
+      driveFiat();
+      break;
   }
   // askTypeFeatures();
   // firstMethod();
