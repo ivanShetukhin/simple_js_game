@@ -612,19 +612,20 @@ var gasStation = {
 };
 
 function driveFiat () {
-  var fiat_car = fiat;
+  var fc = fiat;
   var gS = gasStation;
   var amount  = 200;
   var fuel_norma = 500;
+
   gS.operatorExist();
   gS.fuel_add(fuel_norma);
   gS.howFuel();
-  fiat_car.start_engine();
-  fiat_car.drive();
-  fiat_car.stop_engine();
-  fiat_car.addFuel (amount, gS.fuel_exp);
-  fiat_car.start_engine();
-  fiat_car.drive();
+  fc.start_engine();
+  fc.drive();
+  fc.stop_engine();
+  fc.addFuel (amount, gS.fuel_exp);
+  fc.start_engine();
+  fc.drive();
 }
 
 function driveAuto () {
@@ -632,13 +633,14 @@ function driveAuto () {
   car1.start ();
   car1.drive ();
 }
-
-//------------------------------------------------------------
-//ths input point
-function main() {
-  var choiceProgramm = 9;
-
-  switch (choiceProgramm) {
+// innerHTML
+function innerMethod() {
+  var v1 = document.getElementById("first");
+  v1.innerHTML = "green planet is main thing about that to need think";
+}
+//hold input event
+function onInputMethod(inp) {
+  switch (inp) {
     case 1:
       unendAnimation();
       break;
@@ -666,7 +668,19 @@ function main() {
     case 9:
       driveFiat();
       break;
+    case 10:
+      innerMethod();
+      break;
   }
+}
+//------------------------------------------------------------
+//ths input point
+function main() {
+  var btn1 = document.getElementById("btn1");
+  btn1.onclick = function() {
+    var inp1 = document.getElementById("inp1").value;
+    onInputMethod(Number(inp1));
+  };
   // askTypeFeatures();
   // firstMethod();
   // createHome (1, 1, 10, 130);
