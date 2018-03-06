@@ -560,9 +560,12 @@ var fiat = {
       document.write ("zzzzzzzzz");
     }
   },
-  addFuel: function (amount) {
+  addFuel: function (amount, fuelExp) {
     if (!this.started) {
-      this.fuel = this.fuel + amount;
+      if (fuelExp)
+      {
+        this.fuel = this.fuel + amount;
+      }
     }
     else if (this.started) {
       document.write ("turn off the engine");
@@ -570,14 +573,56 @@ var fiat = {
   }
 };
 
+var textForStation = [
+  "wait operator! <br>",
+  "fuel value is ",
+  "no fuel! <br>"
+];
+
+var gasStation = {
+  fuel: false,
+  operator: false,
+  fuel_norma: 0,
+  fuel_exp: false,
+  fuel_add: function(amount) {
+    if (this.operator) {
+      this.fuel_norma = this.fuel_norma + amount;
+      this.fuel = true;
+    }
+    else {
+      document.write (textForStation[0]);
+    }
+  },
+  operatorExist: function() {
+    this.operator = true;
+  },
+  howFuel: function() {
+    if (this.operator)
+    {
+      if (this.fuel) {
+        document.write(textForStation[1] + this.fuel_norma + "<br>");
+        this.fuel_exp = true;
+      }
+      else {
+        document.write (textForStation[2]);
+        this.fuel_exp = false;
+      }
+    }
+  }
+};
+
 function driveFiat () {
-  console.log(fiat);
   var fiat_car = fiat;
+  var gS = gasStation;
   var amount  = 200;
+  var fuel_norma = 500;
+  gS.operatorExist();
+  gS.fuel_add(fuel_norma);
+  gS.howFuel();
   fiat_car.start_engine();
   fiat_car.drive();
   fiat_car.stop_engine();
-  fiat_car.addFuel (amount);
+  fiat_car.addFuel (amount, gS.fuel_exp);
   fiat_car.start_engine();
   fiat_car.drive();
 }
