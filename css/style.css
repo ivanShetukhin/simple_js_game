@@ -3,3 +3,8 @@ body {
   height: 2800px;
   background-color: #ffffff;
 }
+
+/* ctl+als+c - call colorpicker */
+.redtext {
+  color: #ff0000;
+}

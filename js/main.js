@@ -637,6 +637,7 @@ function driveAuto () {
 function innerMethod() {
   var v1 = document.getElementById("first");
   v1.innerHTML = "green planet is main thing about that to need think";
+  v1.setAttribute("class", "redtext");
 }
 //hold input event
 function onInputMethod(inp) {
@@ -673,14 +674,18 @@ function onInputMethod(inp) {
       break;
   }
 }
-//------------------------------------------------------------
-//ths input point
-function main() {
+
+function choiceMethodMain() {
   var btn1 = document.getElementById("btn1");
   btn1.onclick = function() {
     var inp1 = document.getElementById("inp1").value;
     onInputMethod(Number(inp1));
   };
+}
+//------------------------------------------------------------
+//ths input point
+function main() {
+  choiceMethodMain();
   // askTypeFeatures();
   // firstMethod();
   // createHome (1, 1, 10, 130);
