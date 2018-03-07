@@ -636,8 +636,13 @@ function driveAuto () {
 // innerHTML
 function innerMethod() {
   var v1 = document.getElementById("first");
-  v1.innerHTML = "green planet is main thing about that to need think";
-  v1.setAttribute("class", "redtext");
+  if (v1 != null) {
+    v1.innerHTML = "green planet is main thing about that to need think";
+    v1.setAttribute("class", "redtext");
+  }
+  else {
+    document.write("null element");
+  }
 }
 //hold input event
 function onInputMethod(inp) {
