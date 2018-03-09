@@ -21,3 +21,10 @@ body {
   height: 800px;
   background-size: 800px 800px;
 }
+
+#messageArea {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ff0000;
+}
