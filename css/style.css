@@ -41,8 +41,17 @@ td {
   height: 71px;
 }
 
-#form {
+form {
   position: absolute;
   bottom: 0px;
   right: 0px;
+}
+
+form input {
+  font-size: 1em;
+}
+ 
+#fireButton {
+  background-color: #ff0000;
+  color: white;
 }
