@@ -705,10 +705,18 @@ var view = {
     cell.setAttribute("class", "miss");
   }
 };
+
+//test method
+function testMethod(nm) {
+  var tft = "this tap is hit";
+
+  view.displayMessage(tft);
+  view.displayHit(nm);
+}
 //------------------------------------------------------------
 //ths input point
 function main() {
-  view.displayMessage("this tap is hit");
+  testMethod(15);
   // choiceMethodMain();
   // askTypeFeatures();
   // firstMethod();
