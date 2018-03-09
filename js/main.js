@@ -687,9 +687,28 @@ function choiceMethodMain() {
     onInputMethod(Number(inp1));
   };
 }
+//battle ship
+var view = {
+
+  displayMessage: function(msg) {
+    var msgA = document.getElementById("messageArea");
+    msgA.innerHTML = msg;
+  },
+
+  displayHit: function(location) {
+    var cell = document.getElementById(location);
+    cell.setAttribute("class", "hit");
+  },
+
+  displayMiss: function(location) {
+    var cell = document.getElementById(location);
+    cell.setAttribute("class", "miss");
+  }
+};
 //------------------------------------------------------------
 //ths input point
 function main() {
+  view.displayMessage("this tap is hit");
   // choiceMethodMain();
   // askTypeFeatures();
   // firstMethod();

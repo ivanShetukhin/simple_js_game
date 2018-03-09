@@ -27,6 +27,9 @@ body {
   top: 0px;
   left: 0px;
   color: #ff0000;
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
 }
 
 table {
