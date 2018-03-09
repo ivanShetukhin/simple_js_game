@@ -28,3 +28,21 @@ body {
   left: 0px;
   color: #ff0000;
 }
+
+table {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  border-spacing: 0px;
+}
+
+td {
+  width: 71px;
+  height: 71px;
+}
+
+#form {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
