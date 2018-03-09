@@ -14,9 +14,10 @@ body {
 }
 
 #board {
-  width: 1000px;
-  height: 1000px;
   margin: auto;
   position: relative;
   background: url(../assets/cl.png) no-repeat;
+  width: 800px;
+  height: 800px;
+  background-size: 800px 800px;
 }
