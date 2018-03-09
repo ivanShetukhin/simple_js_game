@@ -56,3 +56,13 @@ form input {
   color: white;
   font-size: 1.5em;
 }
+
+.hit {
+  background: url(../assets/sh2.png) no-repeat center center;
+  background-size: 90%;
+}
+
+.miss {
+  background: url(../assets/miss.png) no-repeat center center;
+  background-size: 90%;
+}
