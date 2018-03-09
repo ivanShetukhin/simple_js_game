@@ -690,7 +690,7 @@ function choiceMethodMain() {
 //------------------------------------------------------------
 //ths input point
 function main() {
-  choiceMethodMain();
+  // choiceMethodMain();
   // askTypeFeatures();
   // firstMethod();
   // createHome (1, 1, 10, 130);
