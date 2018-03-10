@@ -716,11 +716,14 @@ var model = {
     {location: ["24", "34", "44"], hits: ["", "", ""]},
     {location: ["10", "11", "12"], hits: ["", "", ""]}
   ],
+
   fire: function(guess) {
     for(var i = 0; i<this.numShips; i++) {
       var ship = this.ships[i];
       var locations = ship.location;
+      console.log(locations);
       var index = locations.indexOf(guess);
+      console.log(index);
       if (index >= 0) {
         ship.hits[index] = "hit";
         view.displayHit(guess);
@@ -729,16 +732,16 @@ var model = {
           view.displayMessage("you sank my battleship! ");
           this.shipSunk ++;
         }
-        view.displayMiss(guess);
-        view.displayMessage("you missed!");
         return true;
       }
     }
+    view.displayMiss(guess);
+    view.displayMessage("you missed!");
     return false;
   }, 
   isSunk: function(ship) {
     for (var i = 0; i < this.shipLength; i++) {
-      if (ships.hits[i] !== "hit") {
+      if (ship.hits[i] !== "hit") {
         return false;
       }
     }
@@ -748,15 +751,18 @@ var model = {
 
 //test method
 function testMethod(nm) {
-  var tft = "this tap is hit";
+  // var tft = "this tap is hit";
 
-  view.displayMessage(tft);
-  view.displayHit(nm);
+  // view.displayMessage(tft);
+  // view.displayHit(nm);
+  model.fire("24");
+  model.fire("34");
+  model.fire("44");
 }
 //------------------------------------------------------------
 //ths input point
 function main() {
-  testMethod(15);
+  testMethod();
   // choiceMethodMain();
   // askTypeFeatures();
   // firstMethod();
