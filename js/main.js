@@ -721,9 +721,9 @@ var model = {
     for(var i = 0; i<this.numShips; i++) {
       var ship = this.ships[i];
       var locations = ship.location;
-      console.log(locations);
+      // console.log(locations);
       var index = locations.indexOf(guess);
-      console.log(index);
+      // console.log(index);
       if (index >= 0) {
         ship.hits[index] = "hit";
         view.displayHit(guess);
@@ -739,6 +739,7 @@ var model = {
     view.displayMessage("you missed!");
     return false;
   }, 
+
   isSunk: function(ship) {
     for (var i = 0; i < this.shipLength; i++) {
       if (ship.hits[i] !== "hit") {
@@ -749,6 +750,35 @@ var model = {
   }
 };
 
+var controller = {
+  guesses: 0,
+
+  processGuess: function(guess) {
+
+  }
+};
+
+function parseGuess(guess) {
+  var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "k", "l"];
+  if (guess === null || guess.length > 3) {
+    view.displayMessage("you have to input data from 2 or 3 parts");
+  }
+  else {
+    var firstChar = guess.charAt(0);
+    var row = alphabet.indexOf(firstChar);
+    var column = guess.charAt(1) + guess.charAt(2);
+    if (isNaN(row) || isNaN(column)) {
+      view.displayMessage("that number is absent on board");
+    }
+    else if ( row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize) {
+      view.displayMessage("that is not this board");
+    }
+    else {
+      return row + column;
+    }
+  }
+  return null;
+};
 //test method
 function testMethod(nm) {
   // var tft = "this tap is hit";
@@ -762,7 +792,8 @@ function testMethod(nm) {
 //------------------------------------------------------------
 //ths input point
 function main() {
-  testMethod();
+  // testMethod();
+  parseGuess("a4");
   // choiceMethodMain();
   // askTypeFeatures();
   // firstMethod();
