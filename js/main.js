@@ -723,10 +723,26 @@ var model = {
       var index = locations.indexOf(guess);
       if (index >= 0) {
         ship.hits[index] = "hit";
+        view.displayHit(guess);
+        view.displayMessage("HIT!");
+        if (this.isSunk(ship)) {
+          view.displayMessage("you sank my battleship! ");
+          this.shipSunk ++;
+        }
+        view.displayMiss(guess);
+        view.displayMessage("you missed!");
         return true;
       }
     }
     return false;
+  }, 
+  isSunk: function(ship) {
+    for (var i = 0; i < this.shipLength; i++) {
+      if (ships.hits[i] !== "hit") {
+        return false;
+      }
+    }
+    return true;
   }
 };
 
