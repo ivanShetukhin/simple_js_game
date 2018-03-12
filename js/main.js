@@ -790,6 +790,16 @@ function parseGuess(guess) {
 function init() {
   var fireBtn = document.getElementById("fireBtn");
   fireBtn.onclick = handleBtn;
+  var guessInp = document.getElementById("guessInp");
+  guessInp.onkeypress = handleKeyPress;
+};
+
+function handleKeyPress(e) {
+  var fireBtn = document.getElementById("fireBtn");
+  if (e.keyCode == 13) {
+    fireBtn.click();
+    return false;
+  }
 };
 
 function handleBtn() {
@@ -816,7 +826,7 @@ function main() {
   // testMethod();
   //parseGuess("a4");
   // choiceMethodMain();
-  controller.processGuess ("a6");
+  //controller.processGuess("a7");
   // askTypeFeatures();
   // firstMethod();
   // createHome (1, 1, 10, 130);
