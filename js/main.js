@@ -754,7 +754,14 @@ var controller = {
   guesses: 0,
 
   processGuess: function(guess) {
-
+    var location = parseGuess(guess);
+    if (location) {
+      this.guesses ++;
+      var hit = model.fire(location);
+      if (hit && model.shipSunk == model.numShips) {
+        view.displayMessage("YOU SANK ALL BATELLSHIP IN" + this.guesses + " GUESSES" );
+      }
+    }
   }
 };
 
@@ -779,22 +786,25 @@ function parseGuess(guess) {
   }
   return null;
 };
+
+
 //test method
 function testMethod(nm) {
   // var tft = "this tap is hit";
 
   // view.displayMessage(tft);
   // view.displayHit(nm);
-  model.fire("24");
+  /*model.fire("24");
   model.fire("34");
-  model.fire("44");
+  model.fire("44");*/
 }
 //------------------------------------------------------------
 //ths input point
 function main() {
   // testMethod();
-  parseGuess("a4");
+  //parseGuess("a4");
   // choiceMethodMain();
+  controller.processGuess ("a6");
   // askTypeFeatures();
   // firstMethod();
   // createHome (1, 1, 10, 130);
