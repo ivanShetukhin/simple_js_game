@@ -787,6 +787,17 @@ function parseGuess(guess) {
   return null;
 };
 
+function init() {
+  var fireBtn = document.getElementById("fireBtn");
+  fireBtn.onclick = handleBtn;
+};
+
+function handleBtn() {
+  var guessInp = document.getElementById("guessInp");
+  var guessTxt = guessInp.value;
+  controller.processGuess(guessTxt);
+  guessInp.value = "";
+};
 
 //test method
 function testMethod(nm) {
@@ -801,6 +812,7 @@ function testMethod(nm) {
 //------------------------------------------------------------
 //ths input point
 function main() {
+  init();
   // testMethod();
   //parseGuess("a4");
   // choiceMethodMain();
