@@ -747,6 +747,31 @@ var model = {
       }
     }
     return true;
+  },
+
+  generateShip: function() {
+    var direction = Math.floor(Math.random() * 2);
+    var row, col;
+
+    if (direction === 1) {
+      row = Math.floor(Math.random() * this.boardSize);
+      col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+    }
+    else {
+      row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+      col = Math.floor(Math.random() * this.boardSize);
+    }
+    
+    var newShipLocation = [];
+    for (var i = 0; i < this.shipLength; i++) {
+      if (direction === 1) {
+        newShipLocation.push(row + "" + (col + i));
+      } 
+      else {
+        newShipLocation.push((row + i) + "" + col);
+      }
+    }
+    return newShipLocation;
   }
 };
 
