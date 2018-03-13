@@ -717,15 +717,16 @@ var model = {
   //   {location: ["10", "11", "12"], hits: ["", "", ""]}
   // ],
   ships: [
-    {locacations: [0, 0, 0], hits: ["", "", ""]},
-    {locacations: [0, 0, 0], hits: ["", "", ""]},
-    {locacations: [0, 0, 0], hits: ["", "", ""]}
+    {locations: [0, 0, 0], hits: ["", "", ""]},
+    {locations: [0, 0, 0], hits: ["", "", ""]},
+    {locations: [0, 0, 0], hits: ["", "", ""]}
   ],
 
   fire: function(guess) {
     for(var i = 0; i<this.numShips; i++) {
       var ship = this.ships[i];
-      var locations = ship.location;
+      console.log (ship);
+      var locations = ship.locations;
       // console.log(locations);
       var index = locations.indexOf(guess);
       // console.log(index);
@@ -754,6 +755,17 @@ var model = {
     return true;
   },
 
+  generateShipLocation: function() {
+    var locations;
+    for(var i = 0; i < this.numShips; i++) {
+      do {
+        locations = this.generateShip();
+      }
+      while(this.collision(locations));
+      this.ships[i].locations = locations;
+    }
+  },
+
   generateShip: function() {
     var direction = Math.floor(Math.random() * 2);
     var row, col;
@@ -779,11 +791,11 @@ var model = {
     return newShipLocation;
   },
 
-  collision: function(locantions) {
+  collision: function(locations) {
     for (var i = 0; i < this.numShips; i++) {
       var ship = model.ships[i];
       for (var j = 0; j < locations.length; j++) {
-        if (ship.locations.indexOf(locantions[j]) >= 0) {
+        if (ship.locations.indexOf(locations[j]) >= 0) {
           return true;
         }
       }
@@ -830,11 +842,12 @@ function parseGuess(guess) {
 };
 
 function init() {
+  model.generateShipLocation();
   var fireBtn = document.getElementById("fireBtn");
   fireBtn.onclick = handleBtn;
   var guessInp = document.getElementById("guessInp");
   guessInp.onkeypress = handleKeyPress;
-  model.generateShip();
+
 };
 
 function handleKeyPress(e) {
