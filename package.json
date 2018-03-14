@@ -1,1 +1,22 @@
-{}
+{
+  "name": "five",
+  "version": "1.0.0",
+  "description": "this my little pony",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanShetukhin/simple_js_game.git"
+  },
+  "keywords": [
+    "pony"
+  ],
+  "author": "ivoshet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivanShetukhin/simple_js_game/issues"
+  },
+  "homepage": "https://github.com/ivanShetukhin/simple_js_game#readme"
+}
