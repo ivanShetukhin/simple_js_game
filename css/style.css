@@ -20,6 +20,7 @@ body {
   width: 800px;
   height: 800px;
   background-size: 800px 800px;
+  
 }
 
 #messageArea {
@@ -68,4 +69,11 @@ form input {
 .miss {
   background: url(../assets/miss.png) no-repeat center center;
   background-size: 90%;
+}
+
+#textForUser {
+  float: left;
+  width: 30%;
+  background-color: #ffffff00;
+
 }
