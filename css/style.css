@@ -69,3 +69,12 @@ form input {
   background-color: #ffffff00;
 
 }
+
+#linkToMain {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  background: yellow;
+  width: 70px;
+  padding-left: 10px;
+}
