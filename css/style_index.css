@@ -3,7 +3,9 @@ body {
     font-size: 1em;
     margin: 0;
 }
-
+a {
+    text-decoration: none;
+}
 #header {
     margin: 0;
     height: 100px;
