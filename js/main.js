@@ -872,6 +872,7 @@ function detectCoordinate(objEvent) {
 function init() {
   model.generateShipLocation();
   interByClick();
+  hideRules();
   // var fireBtn = document.getElementById("fireBtn");
   // fireBtn.onclick = handleBtn;
   // var guessInp = document.getElementById("guessInp");
@@ -904,6 +905,18 @@ function testMethod(nm) {
   model.fire("34");
   model.fire("44");*/
 }
+
+function hideRules() {
+  var element = document.getElementById("rules");
+  element.onclick = hideText;
+}
+
+function hideText()
+{
+  var element = document.getElementById("rules");
+  element.style.display = 'none';
+}
+
 //------------------------------------------------------------
 //ths input point
 function main() {

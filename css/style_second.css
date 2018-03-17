@@ -2,6 +2,7 @@
 created by ivoshet in 2018 */
 body {
     font-size: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -11,7 +12,7 @@ h1 {
 img {
     margin: 10px;
     border: black solid 1px;
-    height: 300px;
+    height: 200px;
 }
 
 #linkToMain {
@@ -28,3 +29,12 @@ img {
     font-weight: bolder;
     text-decoration: none;
 }
+
+#rules {
+    position: fixed;
+    right: 0;
+    top: 70%;
+    background: yellow;
+    width: 200px;
+    padding: 5px;
+  }

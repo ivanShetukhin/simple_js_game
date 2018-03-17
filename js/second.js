@@ -23,9 +23,21 @@ function reBlur(elementA) {
     elementA.src = name; 
 }
 
+function hideRules() {
+    var element = document.getElementById("rules");
+    element.onclick = hideText;
+}
+  
+function hideText()
+{
+    var element = document.getElementById("rules");
+    element.style.display = 'none';
+ }
+
 //the input point function
 function main() {
     addImage();
+    hideRules();
 }
 //the input point
 main();

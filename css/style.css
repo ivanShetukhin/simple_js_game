@@ -85,3 +85,12 @@ form input {
   font-weight: bolder;
   text-decoration: none;
 }
+
+#rules {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  background: yellow;
+  width: 200px;
+  padding: 5px;
+}
