@@ -14,6 +14,13 @@ function showOtherImage(objEvent) {
     var name = elementA.id;
     name = "assets/" +name + ".png";
     elementA.src = name;
+    setTimeout(reBlur, 2000, elementA);
+}
+
+function reBlur(elementA) {
+    var name = elementA.id;
+    name = "assets/" +name + "_blur" + ".png";
+    elementA.src = name; 
 }
 
 //the input point function

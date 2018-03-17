@@ -20,7 +20,7 @@ img {
     top: 70%;
     background: #ff0000;
     width: 70px;
-    padding-left: 10px;
+    padding: 10px;
   }
 
 #linkToMain a {
