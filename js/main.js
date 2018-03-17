@@ -809,6 +809,7 @@ var controller = {
 
   processGuess: function(guess) {
     var location = parseGuess(guess);
+    // var location = interByClick();
     if (location) {
       this.guesses ++;
       var hit = model.fire(location);
@@ -818,6 +819,7 @@ var controller = {
     }
   }
 };
+
 
 function parseGuess(guess) {
   var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "k", "l"];
@@ -840,9 +842,28 @@ function parseGuess(guess) {
   }
   return null;
 };
+//--------------------------------------------------
+function interByClick() {
+  var elementTd = document.getElementsByTagName("td");
+  for (var i = 0; i < elementTd.length; i ++) {
+    elementTd[i].onclick = detectCoordinate;
+  }
+  console.log(elementTd[i]);
+}
+
+function detectCoordinate(objEvent) {
+  // var element = objEvent.target;
+  // var name = element.id;
+  var name = objEvent.target.id;
+  console.log(name);
+  return name;
+}
+//---------------------------------------------------
 
 function init() {
   model.generateShipLocation();
+  interByClick();
+  
   var fireBtn = document.getElementById("fireBtn");
   fireBtn.onclick = handleBtn;
   var guessInp = document.getElementById("guessInp");
