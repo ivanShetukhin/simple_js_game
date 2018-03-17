@@ -1,5 +1,8 @@
 /* css file for guess blur 
 created by ivoshet in 2018 */
+body {
+    font-size: 1em;
+}
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: blueviolet;

@@ -3,6 +3,8 @@ created by ivoshet in 2018 */
 
 body {
   background-color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1em;
 }
 
 #board {
