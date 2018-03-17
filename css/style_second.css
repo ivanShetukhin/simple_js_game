@@ -25,4 +25,6 @@ img {
 
 #linkToMain a {
     color: white;
+    font-weight: bolder;
+    text-decoration: none;
 }

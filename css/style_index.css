@@ -1,4 +1,17 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1em;
+    margin: 0;
+}
+
+#header {
+    margin: 0;
+    height: 100px;
+    text-align: center;
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
