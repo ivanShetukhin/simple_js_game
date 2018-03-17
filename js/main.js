@@ -430,7 +430,7 @@ function battleshipPlay () {
     }
     else {
       gses = gses + 1;
-      console.log (gses);
+      // console.log (gses);
       if (gs == lct1) {
         alert ("hit");
         hit = hit + 1;
@@ -725,7 +725,7 @@ var model = {
   fire: function(guess) {
     for(var i = 0; i<this.numShips; i++) {
       var ship = this.ships[i];
-      console.log (ship);
+      // console.log (ship);
       var locations = ship.locations;
       // console.log(locations);
       var index = locations.indexOf(guess);
@@ -804,17 +804,23 @@ var model = {
   }
 };
 
+
+
 var controller = {
   guesses: 0,
-
+  gameStatus: false,
   processGuess: function(guess) {
-    var location = parseGuess(guess);
+    // var location = parseGuess(guess);
+    var location = guess;
     // var location = interByClick();
     if (location) {
       this.guesses ++;
+      // console.log(this.guesses);
       var hit = model.fire(location);
+      console.log(hit + " " + model.shipSunk + " " + model.numShips);
       if (hit && model.shipSunk == model.numShips) {
-        view.displayMessage("YOU SANK ALL BATELLSHIP IN" + this.guesses + " GUESSES" );
+        view.displayMessage("YOU SANK ALL BATELLSHIP IN " + this.guesses + " GUESSES" );
+        this.gameStatus = true;
       }
     }
   }
@@ -844,30 +850,32 @@ function parseGuess(guess) {
 };
 //--------------------------------------------------
 function interByClick() {
-  var elementTd = document.getElementsByTagName("td");
-  for (var i = 0; i < elementTd.length; i ++) {
-    elementTd[i].onclick = detectCoordinate;
-  }
-  console.log(elementTd[i]);
+    var elementTd = document.getElementsByTagName("td");
+    for (var i = 0; i < elementTd.length; i ++) { 
+      elementTd[i].onclick = detectCoordinate;
+    }
+  // console.log(elementTd[i]);
 }
 
 function detectCoordinate(objEvent) {
   // var element = objEvent.target;
   // var name = element.id;
   var name = objEvent.target.id;
-  console.log(name);
-  return name;
+  if (controller.gameStatus == false ) {
+    console.log(controller.gameStatus);
+   controller.processGuess(name);
+  // console.log(name);
+  }
 }
 //---------------------------------------------------
 
 function init() {
   model.generateShipLocation();
   interByClick();
-  
-  var fireBtn = document.getElementById("fireBtn");
-  fireBtn.onclick = handleBtn;
-  var guessInp = document.getElementById("guessInp");
-  guessInp.onkeypress = handleKeyPress;
+  // var fireBtn = document.getElementById("fireBtn");
+  // fireBtn.onclick = handleBtn;
+  // var guessInp = document.getElementById("guessInp");
+  // guessInp.onkeypress = handleKeyPress;
 
 };
 
@@ -880,10 +888,10 @@ function handleKeyPress(e) {
 };
 
 function handleBtn() {
-  var guessInp = document.getElementById("guessInp");
-  var guessTxt = guessInp.value;
-  controller.processGuess(guessTxt);
-  guessInp.value = "";
+  // var guessInp = document.getElementById("guessInp");
+  // var guessTxt = guessInp.value;
+  // controller.processGuess(guessTxt);
+  // guessInp.value = "";
 };
 
 //test method
