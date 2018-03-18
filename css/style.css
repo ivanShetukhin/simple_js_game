@@ -62,7 +62,7 @@ form input {
 
 .miss {
   background: url(../assets/miss.png) no-repeat center center;
-  background-size: 90%;
+  background-size: 80%;
 }
 
 #textForUser {
