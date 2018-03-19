@@ -22,4 +22,3 @@ $lines = file($file);
 while(count($lines) > $col_zap) array_shift($lines);
 $lines[] = $date."|".$bot."|".$ip."|".$home."|\r\n";
 file_put_contents($file, $lines);
-
