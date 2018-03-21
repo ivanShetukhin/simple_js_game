@@ -1,19 +1,20 @@
 function makeCounter() {
     var count = 0;
 
-    function counter () {
+    function counterOne () {
         count = count + 1;
         return count;
     }
-    return counter;
+    return counterOne;
 }
 
 function makeCounterOne() {
     var count = makeCounter();
-    wrD(count);
-    wrD(count);
-    wrD(count);
-    wrD(count);
+    wrD(count());
+    wrD(count());
+    wrD(count());
+    wrD(count());
+    wrD(count());
 }
 
 function wrD(text) {
