@@ -1,5 +1,5 @@
 function main() {
-
+    document.write("three");
 
 
 
