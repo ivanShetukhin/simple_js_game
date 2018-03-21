@@ -1,0 +1,15 @@
+/* created for three.html by ivoshet in 2018.03.22*/
+#linkToMain {
+    position: fixed;
+    left: 0;
+    top: 70%;
+    background: #ff0000;
+    width: 70px;
+    padding: 10px;
+  }
+
+#linkToMain a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
