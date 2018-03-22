@@ -45,13 +45,75 @@ function makeNewObject() {
     }
 }
 
+function Car(name, color, year) {
+    this.name = name;
+    this.color = color;
+    this.started = false;
+    this.drive = false;
+    this.stop = false;
+    
+    this.start = function() {
+        this.started = true;
+        console.log("ready to drive");
+    };
+
+    this.drive = function() {
+        this.drive = true;
+        if (this.start) {
+            console.log("to drive");
+        }
+    };
+    
+    this.stop = function() {
+        this.stop = true;
+        if (this.start && this.drive) {
+            console.log ("to stop");
+        }
+    };
+}
+
+function makeCar() {
+    var fiat = new Car("fiat", "yellow", 1980);
+    fiat.start();
+    fiat.drive();
+    fiat.stop();
+}
+
+
+
+var raven = {
+    name: "raven",
+    weight: 250,
+    text: "cgar - cgcar"
+};
+
+function makeBirds() {
+    var ravenI = new Bird(raven);
+    ravenI.say();
+}
+
+function Bird(params) {
+    this.name = params.name;
+    this.weight = params.weight;
+    this.text = params.text;
+
+    this.say = function() {
+        if(this.name != null) {
+            console.log(this.text);
+        }
+    };
+}
+
+
 
 
 //INPUT POINT____________________
 
 function main() {
     // makeCounterOne();
-    makeNewObject();
+    //makeNewObject();
+    //makeCar();
+    makeBirds();
 }
 
 window.onload = main;
