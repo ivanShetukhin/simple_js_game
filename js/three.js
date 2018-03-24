@@ -104,11 +104,14 @@ function Bird(params) {
     };
 }
 
+//the constructor
 function Dog(name, weight, height) {
   this.name = name;
   this.weight = weight;
   this.height = height;
 }
+
+
 
 
 
