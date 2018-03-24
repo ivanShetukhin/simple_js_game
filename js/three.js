@@ -51,7 +51,7 @@ function Car(name, color, year) {
     this.started = false;
     this.drive = false;
     this.stop = false;
-    
+
     this.start = function() {
         this.started = true;
         console.log("ready to drive");
@@ -63,7 +63,7 @@ function Car(name, color, year) {
             console.log("to drive");
         }
     };
-    
+
     this.stop = function() {
         this.stop = true;
         if (this.start && this.drive) {
@@ -104,6 +104,11 @@ function Bird(params) {
     };
 }
 
+function Dog(name, weight, height) {
+  this.name = name;
+  this.weight = weight;
+  this.height = height;
+}
 
 
 
